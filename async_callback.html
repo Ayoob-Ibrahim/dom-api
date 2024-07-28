@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+
+<body>
+    <script>
+        function orderingPizaa(callbackFunction) {
+            setTimeout(() => {
+                let Pizza = 'Dominos Pizza';
+                callbackFunction(Pizza);
+            }, 5000);
+        }
+
+        function pizzaReadyConsole(pizzaName) {
+            console.log(`Pizza Name ${pizzaName}`)
+        }
+
+
+        orderingPizaa(pizzaReadyConsole);
+        console.log('calling my friend');
+
+
+
+
+
+        function getDataFromAPI(callback) {
+            setTimeout(() => {
+                let text = 'Function is Getting Ready !!'
+                callback(text)
+            }, 5000);
+        }
+
+
+
+        getDataFromAPI();
+
+
+
+        function closureEx(dataArray) {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //adding a event to the window 
+        // addeventlistener is also a type of asynchronous
+
+        window.addEventListener('click', callbackclick);
+
+
+        function callbackclick() {
+            console.log('click occurs')
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM API</title>
+</head>
+
+<body>
+    <script>
+        const form = document.createElement('form')
+        document.body.appendChild(form);
+
+        const input = document.createElement('input');
+        input.placeholder = "ADD TODO LIST"
+        form.appendChild(input);
+
+        const button = document.createElement('button');
+        button.innerText = 'ADD SUBMIT';
+        form.appendChild(button);
+
+        const ul = document.createElement('ul');
+        form.appendChild(ul)
+
+
+
+
+        button.addEventListener('click', () => {
+            event.preventDefault();
+            const li = document.createElement('li');
+            li.innerText = input.value;
+            ul.appendChild(li);
+
+
+            li.onclick = removeElement.bind(null, li)
+
+
+            input.value = '';
+        });
+
+
+        const removeElement = (el) => {
+            el.remove()
+        }
+
+document.body.style.padding='20px'
+input.style.marginRight='30px'
+
+    </script>
+</body>
+
+</html>
